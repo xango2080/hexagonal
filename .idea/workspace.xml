@@ -2,129 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f40e34-d539-486e-b49c-28e5255cede1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/Main.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/common/Converter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/departure/FindNextDepartureUseCase.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/departure/config/FindNextDepartureUseCaseConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/departure/config/FindNextDepartureUseCaseModel.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/departure/converter/NextDepartureToNextDepartureResponseConverter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/departure/dto/NextDepartureResponse.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/departure/dto/TrainDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/pmr/Controller.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/pmr/dto/PmrInfoResponse.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/app/usecase/pmr/dto/TrainDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/interactor/ISearchNextDepartureInteractor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/model/NextDeparture.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/model/Station.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/model/Train.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/operator/InfoStationOperator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/operator/departure/ConfigOperator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/operator/departure/ISearchNextDepartureOperator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/operator/departure/SearchNextDepartureOperator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/service/ConfigService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/service/FindInfoStation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/domain/service/FindNextDeparture.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/classes/infra/NavitiaioService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/hexagonal-archi-1.0-SNAPSHOT.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/hexagonal-archi-1.0-SNAPSHOT.jar.original" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/img/buzzlightyeareverywhere.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/img/demo-god-meme.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/img/hystrix.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/img/jour-nuit.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/img/lifecircle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/img/truelifecircle.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/league-gothic/league-gothic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/league-gothic/league-gothic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/league-gothic/league-gothic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-italic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-italic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-semibold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-semibold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-semibold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-semibolditalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-semibolditalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro-semibolditalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/hexagonal.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/hexagonalarchi.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/common/Converter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/departure/FindNextDepartureUseCase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/departure/config/FindNextDepartureUseCaseConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/departure/config/FindNextDepartureUseCaseModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/departure/converter/NextDepartureToNextDepartureResponseConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/departure/dto/NextDepartureResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/departure/dto/TrainDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/pmr/Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/pmr/dto/PmrInfoResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/app/usecase/pmr/dto/TrainDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/interactor/ISearchNextDepartureInteractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/model/NextDeparture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/model/Station.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/model/Train.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/operator/InfoStationOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/operator/departure/ConfigOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/operator/departure/ISearchNextDepartureOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/operator/departure/SearchNextDepartureOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/service/ConfigService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/service/FindInfoStation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/domain/service/FindNextDeparture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/src/main/java/infra/NavitiaioService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NextDeparture/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/print/paper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/print/pdf.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/reveal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/reveal.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/beige.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/black.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/blood.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/league.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/moon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/night.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/serif.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/simple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/sky.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/solarized.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/beige.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/black.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/blood.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/league.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/moon.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/night.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/serif.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/simple.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/sky.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/solarized.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/source/white.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/template/mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/template/settings.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/template/theme.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/css/theme/white.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/js/reveal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/css/zenburn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/league-gothic/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/league-gothic/league-gothic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/font/source-sans-pro/source-sans-pro.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/js/classList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/js/head.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/lib/js/html5shiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prez/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -215,6 +93,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -325,12 +204,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546427626257</updated>
-      <workItem from="1546427628176" duration="64000" />
+      <workItem from="1546427628176" duration="756000" />
     </task>
+    <task id="LOCAL-00001" summary="first">
+      <created>1546427750343</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1546427750343</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64000" />
+    <option name="totallyTimeSpent" value="756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -364,6 +251,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <option name="LAST_COMMIT_MESSAGE" value="first" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

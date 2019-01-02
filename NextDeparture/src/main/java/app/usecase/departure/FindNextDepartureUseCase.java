@@ -24,6 +24,7 @@ public class FindNextDepartureUseCase {
 		if (model.getOperator() == null || model.getConverter() == null) {
 			throw new IllegalArgumentException();
 		}
+
 		operator = model.getOperator();
 		converter = model.getConverter();
 	}
