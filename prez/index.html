@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Hystrix Présentation</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<h1>Hystrix</h1>
+			<img src="img/hystrix.jpg">
+		</section>
+
+		<section>
+			<section>
+				<h2>Un circuit breaker ?</h2>
+				<blockquote cite="https://fr.wikipedia.org/wiki/Disjoncteur">
+					<small>
+						&ldquo;Un dispositif de protection dont la fonction est d'interrompre le
+						courant en cas d'incident sur un circuit.
+						Il est capable d'interrompre et de surveiller un courant dans une installation. Sa principale
+						caractéristique est qu'il est réarmable et de ne subir aucune avarie lors de son fonctionnement.&ldquo;
+					</small>
+				</blockquote>
+			</section>
+			<section>
+				<h2>Que gère-t'il ?</h2>
+				<ul>
+					<li>La vie du circuit</li>
+					<li>Une réponse temporaire</li>
+					<li>La protection du système</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section data-background="img/jour-nuit.gif">
+				<h2>Comment ca fonctionne ?</h2>
+			</section>
+			<section>
+				<h3>Le cycle de vie d'un circuit :</h3>
+				<img width="600" data-src="img/lifecircle.png">
+			</section>
+			<section>
+				<h3>Création d'un circuit</h3>
+				<pre>
+					<code java>
+@HystrixCommand(
+	commandKey = String, => Default : function name
+	groupKey = String, => Default : class name
+	threadPoolKey = String, => Default : groupKey
+	fallbackMethod = String
+)
+					</code>
+				</pre>
+			</section>
+		</section>
+		<section>
+			<section data-background="img/buzzlightyeareverywhere.png">
+			</section>
+			<section>
+				<span>metrics.rollingStats.timeInMilliseconds</span>
+				<p>
+					<small>
+						La fenêtre de temps pendant laquelle Hystrix calcule le pourcentage d’appel en échec pour
+						ouvrir ou pas le circuit.
+					</small>
+					<br/>
+					<small>
+						<small>Les statistiques sont remises à zéro à chaque début de cette fenêtre.</small>
+					</small>
+				</p>
+				<small>default 10000</small>
+			</section>
+			<section>
+				<span>execution.isolation.thread.timeoutInMilliseconds</span>
+				<p>
+					<small>Le temps après lequel Hystrix n’attend plus la réponse.</small>
+				</p>
+				<small>default 1000</small>
+			</section>
+			<section>
+				<span>circuitBreaker.requestVolumeThreshold</span>
+				<p>
+					<small>le nombre minimum de requètes à partir duquel Hystrix peut ouvrir le circuit</small>
+				</p>
+				<small>default 20</small>
+			</section>
+			<section>
+				<span>circuitBreaker.sleepWindowInMilliseconds</span>
+				<p>
+					<small>La durée d'ouverture du circuit durant lequel Hystrix n'appel plus la ressource externe.
+					</small>
+				</p>
+				<small>default 5000</small>
+			</section>
+			<section>
+				<span>circuitBreaker.errorThresholdPercentage</span>
+				<p>
+					<small>Le pourcentage d'appels en erreur VS en succès.</small>
+				</p>
+				<small>default 50</small>
+			</section>
+		</section>
+		<section>
+			<h3>Le cycle de vie de hystrix :</h3>
+			<img width="700" data-src="img/truelifecircle.jpg">
+		</section>
+		<section data-background="img/demo-god-meme.jpg" data-background-size="contain">
+		</section>
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+	Reveal.initialize({
+		dependencies: [
+			{src: 'plugin/markdown/marked.js'},
+			{src: 'plugin/markdown/markdown.js'},
+			{src: 'plugin/notes/notes.js', async: true},
+			{
+				src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+				hljs.initHighlightingOnLoad();
+			}
+			}
+		]
+	});
+</script>
+</body>
+</html>
