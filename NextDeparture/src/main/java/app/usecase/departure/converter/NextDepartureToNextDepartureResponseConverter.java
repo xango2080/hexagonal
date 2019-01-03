@@ -10,7 +10,6 @@ import domain.model.NextDeparture;
 public class NextDepartureToNextDepartureResponseConverter implements Converter<NextDeparture, NextDepartureResponse> {
 
 	private StationToStationDTOConverter stationToStationDTOConverter = new StationToStationDTOConverter();
-
 	private TrainToTrainDTOConverter trainToTrainDTOConverter = new TrainToTrainDTOConverter();
 
 	@Override
