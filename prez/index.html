@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Hystrix Présentation</title>
+	<title>Hexagonal Architecture Présentation</title>
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css">
@@ -24,106 +24,179 @@
 <body>
 <div class="reveal">
 	<div class="slides">
-		<section>
-			<h1>Hystrix</h1>
-			<img src="img/hystrix.jpg">
+		<section data-background="img/back-title.jpg">
+			<h1 class="shadow-red">Architecture Hexagonal</h1>
 		</section>
+
 
 		<section>
 			<section>
-				<h2>Un circuit breaker ?</h2>
-				<blockquote cite="https://fr.wikipedia.org/wiki/Disjoncteur">
-					<small>
-						&ldquo;Un dispositif de protection dont la fonction est d'interrompre le
-						courant en cas d'incident sur un circuit.
-						Il est capable d'interrompre et de surveiller un courant dans une installation. Sa principale
-						caractéristique est qu'il est réarmable et de ne subir aucune avarie lors de son fonctionnement.&ldquo;
-					</small>
+				<h4>Cette architecture est aussi appelée <span class="text-blue">Ports et Adaptateurs</span></h4>
+				<blockquote cite="http://wiki.c2.com/?HexagonalArchitecture/">
+					<p>
+						<small>
+							Allow an application to equally be driven by users, programs, automated test or batch
+							scripts,
+							and to be developed and tested in isolation from its eventual run-time devices and
+							databases.
+						</small>
+					</p>
+					<p>
+						<small>
+							As events arrive from the outside world at a port, a technology-specific adapter converts it
+							into a usable procedure call or message and passes it to the application. The application is
+							blissfully ignorant of the nature of the input device.
+						</small>
+						<small>
+							When the application has something to
+							send out, it sends it out through a port to an adapter, which creates the appropriate
+							signals
+							needed by the receiving technology (human or automated). The application has a semantically
+							sound interaction with the adapters on all sides of it, without actually knowing the nature
+							of
+							the things on the other side of the adapters.
+						</small>
+					</p>
 				</blockquote>
 			</section>
 			<section>
-				<h2>Que gère-t'il ?</h2>
+				<h2>Dans quel but ?</h2>
 				<ul>
-					<li>La vie du circuit</li>
-					<li>Une réponse temporaire</li>
-					<li>La protection du système</li>
+					<li>la séparation stricte du code métier et technique</li>
+					<li>l’inversion de dépendance : le code technique dépend du code métier, il est au service de ce
+						dernier, pas l’inverse
+					</li>
+					<li>une application maintenable et testable</li>
 				</ul>
+			</section>
+			<section>
+				<h2>DDD ?</h2>
+				<img src="img/DDD.jpg"/>
 			</section>
 		</section>
 		<section>
-			<section data-background="img/jour-nuit.gif">
+			<section>
 				<h2>Comment ca fonctionne ?</h2>
 			</section>
 			<section>
-				<h3>Le cycle de vie d'un circuit :</h3>
-				<img width="600" data-src="img/lifecircle.png">
+				<h3>Présentation :</h3>
+				<img width="600" data-src="img/archi_hexa_00.png"/>
 			</section>
 			<section>
-				<h3>Création d'un circuit</h3>
-				<pre>
-					<code java>
-@HystrixCommand(
-	commandKey = String, => Default : function name
-	groupKey = String, => Default : class name
-	threadPoolKey = String, => Default : groupKey
-	fallbackMethod = String
-)
-					</code>
-				</pre>
+				<h3>
+					<span class="text-blue">A</span>pplication
+					<span class="text-blue">P</span>rovider
+					<span class="text-blue">I</span>nterface
+					<small>Primary Port</small>
+				</h3>
+				<p>
+					Ils <strong>s'occupent</strong> des interactions avec l'exterieur en
+					utilisant l'hexagone.
+				</p>
+				<p>
+					<small>
+						Elle adapte les informations recues en valeurs métier avant de les envoyer dans l'hexagone. Puis
+						elle recupère le resultat et l'adapte pour l'exterieur.
+					</small>
+				</p>
+			</section>
+			<section>
+				<h3>
+					<span class="text-blue">S</span>ervice
+					<span class="text-blue">P</span>rovider
+					<span class="text-blue">I</span>nterface
+					<small>Secondary Port</small>
+				</h3>
+				<p>
+					Ils sont <strong>utilisés</strong> par l'hexagone pour communiquer avec
+					l'exterieur.
+				</p>
+				<p>
+					<small>
+						Elle adapte les informations recues depuis l'hexagone pour les envoyer vers l'exterieur. Puis
+						elle recupère le resultat et l'adapte pour l'hexagone.
+					</small>
+				</p>
+			</section>
+			<section>
+				<h3>Zoom :</h3>
+				<img width="600" src="img/zoom-archi-hex.png"/>
+			</section>
+			<section>
+				<h3>Autre zoom :</h3>
+				<img width="600" src="img/hexagon-15.png" style="background: white"/>
+			</section>
+		</section>
+
+		<section>
+			<img src="img/this-demo-uses.jpg"/>
+		</section>
+
+		<section>
+			<h2>Pour <span class="text-blue">&</span> contre ?</h2>
+			<section>
+				<h4 class="text-green">Pour</h4>
+				<ul>
+					<li>
+						<strong>Testabilité</strong> : le code est S.O.L.I.D e
+					</li>
+					<li>
+						<strong>Flexible</strong> : Les partenaires sont échangable facilement
+					</li>
+					<li>
+						<strong>Métier propre</strong> : le métier n'est pas encombré par la technique
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h4 class="text-red">Contre</h4>
+				<ul>
+					<li>
+						<strong>Lourd</strong> : la création de beaucoup de class peut devenir lourd
+					</li>
+					<li>
+						<strong>Méconnu</strong> : une architecture peut connu et confu au début
+					</li>
+					<li>
+						<strong>Métier</strong> : distinguer le métier de la technique
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h4>Zone grise</h4>
+				<ul>
+					<li>Aucune annotation ni framework dans le métier</li>
+					<li>Pas adapter pour tous les projets</li>
+					<li>C'est du ports et adapter easy !</li>
+				</ul>
+			</section>
+		</section>
+		<section data-background="img/quizz.jpg">
+			<section>
+			</section>
+
+			<section>
+				<section>
+					<img src="img/different-archi.png">
+				</section>
 			</section>
 		</section>
 		<section>
-			<section data-background="img/buzzlightyeareverywhere.png">
-			</section>
-			<section>
-				<span>metrics.rollingStats.timeInMilliseconds</span>
-				<p>
-					<small>
-						La fenêtre de temps pendant laquelle Hystrix calcule le pourcentage d’appel en échec pour
-						ouvrir ou pas le circuit.
-					</small>
-					<br/>
-					<small>
-						<small>Les statistiques sont remises à zéro à chaque début de cette fenêtre.</small>
-					</small>
-				</p>
-				<small>default 10000</small>
-			</section>
-			<section>
-				<span>execution.isolation.thread.timeoutInMilliseconds</span>
-				<p>
-					<small>Le temps après lequel Hystrix n’attend plus la réponse.</small>
-				</p>
-				<small>default 1000</small>
-			</section>
-			<section>
-				<span>circuitBreaker.requestVolumeThreshold</span>
-				<p>
-					<small>le nombre minimum de requètes à partir duquel Hystrix peut ouvrir le circuit</small>
-				</p>
-				<small>default 20</small>
-			</section>
-			<section>
-				<span>circuitBreaker.sleepWindowInMilliseconds</span>
-				<p>
-					<small>La durée d'ouverture du circuit durant lequel Hystrix n'appel plus la ressource externe.
-					</small>
-				</p>
-				<small>default 5000</small>
-			</section>
-			<section>
-				<span>circuitBreaker.errorThresholdPercentage</span>
-				<p>
-					<small>Le pourcentage d'appels en erreur VS en succès.</small>
-				</p>
-				<small>default 50</small>
-			</section>
-		</section>
-		<section>
-			<h3>Le cycle de vie de hystrix :</h3>
-			<img width="700" data-src="img/truelifecircle.jpg">
-		</section>
-		<section data-background="img/demo-god-meme.jpg" data-background-size="contain">
+			<p>
+				<a href="https://fr.slideshare.net/ThomasPierrain/coder-sans-peur-du-changement-avec-la-meme-pas-mal-hexagonal-architecture">
+					Coder sans peur du changement avec la meme pas mal hexagonal architecture
+				</a>
+			</p>
+			<p>
+				<a href="https://beyondxscratch.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch/">
+					Decoupling your technical code from your business logic with the Hexagonal Architecture (HexArch)
+				</a>
+			</p>
+			<p>
+				<a href="https://softwarecampament.wordpress.com/portsadapters/#tc7">
+					Ports and Adapters Pattern (Hexagonal Architecture)
+				</a>
+			</p>
 		</section>
 	</div>
 </div>
