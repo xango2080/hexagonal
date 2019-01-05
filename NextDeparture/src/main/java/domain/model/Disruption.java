@@ -8,7 +8,7 @@ public class Disruption {
 
 	private LocalDateTime date;
 
-	Disruption(String title, LocalDateTime date) {
+	public Disruption(String title, LocalDateTime date) {
 		this.title = title;
 		this.date = date;
 	}
