@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 
 public class Disruption {
 
-	private String title;
+	private final String title;
 
-	private LocalDateTime date;
+	private final LocalDateTime date;
 
 	public Disruption(String title, LocalDateTime date) {
 		this.title = title;
@@ -17,15 +17,8 @@ public class Disruption {
 		return title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime date) {
-		this.date = date;
-	}
 }

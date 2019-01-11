@@ -1,21 +1,15 @@
 package domain.model;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class NextDepartureBuilder {
 
 	private LocalTime departureTime;
-
 	private String platform;
-
-	private Station arrival;
-
 	private Train train;
-
-	private List<Station> stations;
+	private HashSet<Station> stations;
+	private String station;
 
 	private NextDepartureBuilder() {
 
@@ -36,23 +30,18 @@ public class NextDepartureBuilder {
 		return this;
 	}
 
-	public NextDepartureBuilder withArrival(Station arrival) {
-		this.arrival = arrival;
-		return this;
-	}
-
 	public NextDepartureBuilder withTrain(Train train) {
 		this.train = train;
 		return this;
 	}
 
 	public NextDepartureBuilder withStations(Collection<Station> stations) {
-		this.stations = new ArrayList<>(stations);
+		this.stations = new HashSet<>(stations);
 		return this;
 	}
 
 	public NextDeparture build() {
-		return new NextDeparture(departureTime, platform, arrival, train, stations);
+		return new NextDeparture(departureTime, train, new Itinerary(stations, null, platform));
 	}
 
 }

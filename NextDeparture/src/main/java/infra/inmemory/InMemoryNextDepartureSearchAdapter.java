@@ -1,7 +1,7 @@
 package infra.inmemory;
 
 import domain.model.*;
-import domain.repository.NextDepartureRepository;
+import domain.repository.NextDepartureSearch;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -10,11 +10,11 @@ import java.time.ZoneId;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class InMemoryNextDepartureNextAdapterRepository implements NextDepartureRepository {
+public class InMemoryNextDepartureSearchAdapter implements NextDepartureSearch {
 
     private final Set<NextDeparture> nextDepartures;
 
-    public InMemoryNextDepartureNextAdapterRepository() {
+    public InMemoryNextDepartureSearchAdapter() {
         this.nextDepartures = new HashSet<NextDeparture>();
         loadData();
     }
@@ -35,7 +35,6 @@ public class InMemoryNextDepartureNextAdapterRepository implements NextDeparture
         NextDeparture sncf = NextDepartureBuilder
                 .builder()
                 .withTrain(aaaa)
-                .withArrival(stationA)
                 .withDepartureTime(LocalTime.of(8, 30))
                 .withPlatform("SNCF")
                 .withStations(Collections.singletonList(stationB))
@@ -43,7 +42,6 @@ public class InMemoryNextDepartureNextAdapterRepository implements NextDeparture
         NextDeparture departureB = NextDepartureBuilder
                 .builder()
                 .withTrain(bbbb)
-                .withArrival(stationA)
                 .withDepartureTime(LocalTime.of(8, 35))
                 .withPlatform("SNCF")
                 .withStations(Arrays.asList(stationC, stationF))
@@ -51,7 +49,6 @@ public class InMemoryNextDepartureNextAdapterRepository implements NextDeparture
         NextDeparture departureC = NextDepartureBuilder
                 .builder()
                 .withTrain(cccc)
-                .withArrival(stationA)
                 .withDepartureTime(LocalTime.of(now.getHour(), 32))
                 .withPlatform("SNCF")
                 .withStations(Collections.singletonList(stationF))
@@ -59,33 +56,32 @@ public class InMemoryNextDepartureNextAdapterRepository implements NextDeparture
         NextDeparture departureF = NextDepartureBuilder
                 .builder()
                 .withTrain(cccc)
-                .withArrival(stationA)
                 .withDepartureTime(LocalTime.now().plusMinutes(30))
                 .withPlatform("SNCF")
-                .withStations(Collections.emptyList())
+                .withStations(Collections.singletonList(stationF))
                 .build();
         NextDeparture departureD = NextDepartureBuilder
                 .builder()
                 .withTrain(dddd)
-                .withArrival(stationD)
                 .withDepartureTime(LocalTime.now().plusMinutes(29))
                 .withPlatform("SNCF")
-                .withStations(Collections.emptyList())
+                .withStations(Collections.singleton(stationF))
                 .build();
         nextDepartures.addAll(Arrays.asList(sncf, departureB, departureC, departureF, departureD));
     }
 
     @Override
-    public Collection<NextDeparture> retrieveNext(String station, Instant departureTime, long maxResults) {
-        LocalTime loc = LocalTime.from(departureTime.atZone(ZoneId.systemDefault()));
+    public Collection<NextDeparture> retrieveNext(NextDepartureSearchQuery searchQuery) {
+        LocalTime loc = LocalTime.from(searchQuery.getDepartureDate().atZone(ZoneId.systemDefault()));
         return this.nextDepartures
                 .stream()
-                .filter(nextDeparture -> isEquals(station, nextDeparture, loc))
+                .filter(nextDeparture -> isEquals(searchQuery.getStation(), nextDeparture, loc))
                 .collect(Collectors.toSet());
     }
 
     private boolean isEquals(String station, NextDeparture nextDeparture, LocalTime localTime) {
-        return nextDeparture.getArrival().getLabel().contains(station) && nextDeparture.getDepartureTime().isAfter(localTime);
+        return nextDeparture.getItinerary().getFrom().getLabel().contains(station)
+                && nextDeparture.getDepartureTime().isAfter(localTime);
     }
 
 }

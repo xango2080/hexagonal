@@ -1,12 +1,14 @@
 package domain.model;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class Station {
-	private String label;
 
+	private String label;
 	private List<Disruption> disruptions;
+	public static final Station NULL = new Station(null, Collections.emptyList());
 
 	public Station(String label, List<Disruption> disruptions) {
 		this.label = label;

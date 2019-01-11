@@ -11,7 +11,7 @@ public class GeolocalisationNextDeparture {
     public GeolocalisationNextDeparture(NextDeparture nextDeparture) {
         this.hour = nextDeparture.getDepartureTime().toString();
         this.train = nextDeparture.getTrain().getCode();
-        this.disruption = !nextDeparture.getArrival().getDisruptions().isEmpty();
+        this.disruption = nextDeparture.getItinerary().isDisrupted();
     }
 
     public String getHour() {

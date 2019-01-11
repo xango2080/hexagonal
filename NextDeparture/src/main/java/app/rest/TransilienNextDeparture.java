@@ -1,10 +1,8 @@
 package app.rest;
 
-import domain.model.Disruption;
 import domain.model.NextDeparture;
 
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class TransilienNextDeparture {
 
@@ -19,12 +17,12 @@ public class TransilienNextDeparture {
 
     public TransilienNextDeparture(NextDeparture nextDeparture) {
         this.hour = nextDeparture.getDepartureTime().toString();
-        this.station = nextDeparture.getArrival().getLabel();
+        this.station = nextDeparture.getItinerary().getStation().getLabel();
         this.name = nextDeparture.getTrain().getCode();
         this.type = "train";
-        this.partner = nextDeparture.getPlatform();
-        this.destination = new Destination(nextDeparture.getStations().get(0).getLabel(), nextDeparture.getArrival().getLabel());
-        this.disruptions = nextDeparture.getArrival().getDisruptions().stream().map(Disruption::getTitle).collect(Collectors.toSet());
+        this.partner = "sncf";
+        this.destination = new Destination(nextDeparture.getItinerary().getFrom().getLabel(), nextDeparture.getItinerary().getArrival().getLabel());
+        this.disruptions = nextDeparture.getItinerary().disruptions();
     }
 
     public String getStation() {
