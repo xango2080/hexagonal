@@ -1,4 +1,7 @@
-package domain.model;
+package domain.model.response;
+
+import domain.model.NextDeparture;
+import domain.model.search.NextDepartureSearchQuery;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -8,6 +11,7 @@ public class NextDepartureCalculatorResponse {
 
     private final Collection<NextDeparture> results;
     private final NextDepartureSearchQuery query;
+    public static final NextDepartureCalculatorResponse NULL = new NextDepartureCalculatorResponse(Collections.emptyList(), NextDepartureSearchQuery.NULL);
 
     public NextDepartureCalculatorResponse(Collection<NextDeparture> results, NextDepartureSearchQuery query) {
         Objects.requireNonNull(query, "query can't be null");
@@ -47,5 +51,14 @@ public class NextDepartureCalculatorResponse {
     @Override
     public int hashCode() {
         return Objects.hash(getResults(), query);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("NextDepartureCalculatorResponse{");
+        sb.append("results=").append(results);
+        sb.append(", query=").append(query);
+        sb.append('}');
+        return sb.toString();
     }
 }

@@ -1,32 +1,39 @@
 package domain.model;
 
+import annotation.ddd.ValueObject;
+
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 
+@ValueObject
 public class NextDeparture {
 
-	private final LocalTime departureTime;
+	private Train train;
+	private Station station;
+	private String platform;
+	private LocalTime arrivalTime;
 
-	private final Itinerary itinerary;
-
-	private final Train train;
-
-	NextDeparture(LocalTime departureTime, Train train, Itinerary itinerary) {
-		this.departureTime = departureTime;
+	public NextDeparture(Train train, Station station, String platform, LocalTime arrivalTime) {
 		this.train = train;
-		this.itinerary = itinerary;
-	}
-
-	public LocalTime getDepartureTime() {
-		return departureTime;
-	}
-
-	public Itinerary getItinerary() {
-		return itinerary;
+		this.station = station;
+		this.platform = platform;
+		this.arrivalTime = arrivalTime;
 	}
 
 	public Train getTrain() {
 		return train;
+	}
+
+	public Station getStation() {
+		return station;
+	}
+
+	public String getPlatform() {
+		return platform;
+	}
+
+	public LocalTime getArrivalTime() {
+		return arrivalTime;
 	}
 }

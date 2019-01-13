@@ -1,11 +1,10 @@
 package infra.jdbc;
 
 import domain.model.NextDeparture;
-import domain.model.NextDepartureSearchQuery;
+import domain.model.search.NextDepartureSearchQuery;
 import domain.repository.NextDepartureSearch;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.time.Instant;
 import java.util.Collection;
 import java.util.Collections;
 

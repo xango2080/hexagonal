@@ -9,9 +9,9 @@ public class GeolocalisationNextDeparture {
     private final boolean disruption;
 
     public GeolocalisationNextDeparture(NextDeparture nextDeparture) {
-        this.hour = nextDeparture.getDepartureTime().toString();
-        this.train = nextDeparture.getTrain().getCode();
-        this.disruption = nextDeparture.getItinerary().isDisrupted();
+        this.hour = nextDeparture.getArrivalTime().toString();
+        this.train = null;
+        this.disruption = false;
     }
 
     public String getHour() {

@@ -1,46 +1,77 @@
 package domain.model;
 
+import annotation.ddd.Builder;
+import annotation.ddd.Entity;
+
 import java.util.Objects;
 
+@Entity
 public class Train {
 
-	private String code;
+    private final TrainId trainId;
+    private final String code;
+    private final String mission;
 
-	private String mission;
+    public Train(String code, String mission) {
+        this.code = code;
+        this.mission = mission;
+        this.trainId = TrainId.newTrainId();
+    }
 
-	public Train(String code, String mission) {
-		this.code = code;
-		this.mission = mission;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getMission() {
+        return mission;
+    }
 
-	public String getMission() {
-		return mission;
-	}
+    public TrainId getId(){
+        return trainId;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		Train train = (Train) o;
-		return Objects.equals(getCode(), train.getCode()) &&
-			   Objects.equals(getMission(), train.getMission());
-	}
+    public static Train.Builder builder(){
+        return new Train.Builder();
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(getCode(), getMission());
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Train train = (Train) o;
+        return Objects.equals(getCode(), train.getCode()) &&
+               Objects.equals(getMission(), train.getMission());
+    }
 
-	@Override
-	public String toString() {
-		final StringBuilder sb = new StringBuilder("Train{");
-		sb.append("code='").append(code).append('\'');
-		sb.append(", mission='").append(mission).append('\'');
-		sb.append('}');
-		return sb.toString();
-	}
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCode(), getMission());
+    }
+
+    @annotation.ddd.Builder
+    public static class Builder {
+
+        private String code;
+        private String mission;
+
+        Builder(){
+
+        }
+
+        public Builder withCode(String code){
+            this.code = code;
+            return this;
+        }
+
+        public Builder withMission(String mission){
+            this.mission = mission;
+            return this;
+        }
+
+
+        public Train builder() {
+            return new Train(code, mission);
+        }
+
+    }
 }

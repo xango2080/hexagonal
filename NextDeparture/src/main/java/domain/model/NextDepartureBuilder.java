@@ -1,8 +1,11 @@
 package domain.model;
 
+import annotation.ddd.Builder;
+
 import java.time.LocalTime;
 import java.util.*;
 
+@Builder
 public class NextDepartureBuilder {
 
 	private LocalTime departureTime;
@@ -41,7 +44,7 @@ public class NextDepartureBuilder {
 	}
 
 	public NextDeparture build() {
-		return new NextDeparture(departureTime, train, new Itinerary(stations, null, platform));
+		return null;
 	}
 
 }

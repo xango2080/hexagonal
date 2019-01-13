@@ -1,7 +1,7 @@
 package app.rest;
 
-import domain.model.NextDepartureCalculatorRequest;
-import domain.model.NextDepartureCalculatorResponse;
+import domain.model.request.NextDepartureCalculatorRequest;
+import domain.model.response.NextDepartureCalculatorResponse;
 import domain.service.NextDepartureCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

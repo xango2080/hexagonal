@@ -1,9 +1,7 @@
 package domain.service;
 
-import domain.model.NextDepartureCalculatorRequest;
-import domain.model.NextDepartureCalculatorResponse;
-
-import java.time.Instant;
+import domain.model.request.NextDepartureCalculatorRequest;
+import domain.model.response.NextDepartureCalculatorResponse;
 
 public interface NextDepartureCalculator {
     NextDepartureCalculatorResponse computeNextDeparture(NextDepartureCalculatorRequest request);

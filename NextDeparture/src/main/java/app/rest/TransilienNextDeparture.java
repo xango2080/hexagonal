@@ -2,6 +2,7 @@ package app.rest;
 
 import domain.model.NextDeparture;
 
+import java.util.Collections;
 import java.util.Set;
 
 public class TransilienNextDeparture {
@@ -16,13 +17,13 @@ public class TransilienNextDeparture {
 
 
     public TransilienNextDeparture(NextDeparture nextDeparture) {
-        this.hour = nextDeparture.getDepartureTime().toString();
-        this.station = nextDeparture.getItinerary().getStation().getLabel();
-        this.name = nextDeparture.getTrain().getCode();
+        this.hour = null;
+        this.station = null;
+        this.name = null;
         this.type = "train";
         this.partner = "sncf";
-        this.destination = new Destination(nextDeparture.getItinerary().getFrom().getLabel(), nextDeparture.getItinerary().getArrival().getLabel());
-        this.disruptions = nextDeparture.getItinerary().disruptions();
+        this.destination = null;
+        this.disruptions = Collections.emptySet();
     }
 
     public String getStation() {

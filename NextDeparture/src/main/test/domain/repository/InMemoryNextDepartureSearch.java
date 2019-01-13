@@ -1,11 +1,10 @@
-package infra.inmemory;
+package domain.repository;
 
 import domain.model.Disruption;
 import domain.model.NextDeparture;
 import domain.model.Station;
 import domain.model.Train;
 import domain.model.search.NextDepartureSearchQuery;
-import domain.repository.NextDepartureSearch;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -16,11 +15,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class InMemoryNextDepartureSearchAdapter implements NextDepartureSearch {
+public class InMemoryNextDepartureSearch implements NextDepartureSearch {
 
     private final Set<NextDeparture> nextDepartures;
 
-    public InMemoryNextDepartureSearchAdapter() {
+    public InMemoryNextDepartureSearch() {
         this.nextDepartures = new HashSet<>();
         loadData();
     }
@@ -93,8 +92,6 @@ public class InMemoryNextDepartureSearchAdapter implements NextDepartureSearch {
         nextDepartures.add(new NextDeparture(transilienL2, asnieres, "Voie1", LocalTime.now().plus(23, ChronoUnit.MINUTES)));
         nextDepartures.add(new NextDeparture(transilienL2, becon, "Voie2", LocalTime.now().plus(25, ChronoUnit.MINUTES)));
         nextDepartures.add(new NextDeparture(transilienL2, laGarenneColombes, "Voie1", LocalTime.now().plus(33, ChronoUnit.MINUTES)));
-
-
     }
 
     @Override

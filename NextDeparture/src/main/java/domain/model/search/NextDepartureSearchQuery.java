@@ -1,4 +1,4 @@
-package domain.model;
+package domain.model.search;
 
 import java.time.Instant;
 import java.util.Objects;
@@ -8,6 +8,7 @@ public class NextDepartureSearchQuery {
     private final String station;
     private final Instant departureDate;
     private final long maxResults;
+    public final static NextDepartureSearchQuery NULL = new NextDepartureSearchQuery(null, null, 0);
 
     public NextDepartureSearchQuery(String station, Instant departureDate, long maxResults) {
         this.station = station;
@@ -44,5 +45,15 @@ public class NextDepartureSearchQuery {
     @Override
     public int hashCode() {
         return Objects.hash(getStation(), getDepartureDate(), getMaxResults());
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("NextDepartureSearchQuery{");
+        sb.append("station='").append(station).append('\'');
+        sb.append(", departureDate=").append(departureDate);
+        sb.append(", maxResults=").append(maxResults);
+        sb.append('}');
+        return sb.toString();
     }
 }
