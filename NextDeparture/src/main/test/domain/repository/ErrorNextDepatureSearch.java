@@ -1,8 +1,8 @@
-package domain.repository;
+package com.xango.nextdeparture.domain.gateway;
 
-import domain.model.NextDeparture;
-import domain.model.exception.NextDepartureFeatureNotAvailableException;
-import domain.model.search.NextDepartureSearchQuery;
+import com.xango.nextdeparture.domain.model.NextDeparture;
+import com.xango.nextdeparture.domain.model.exception.NextDepartureFeatureNotAvailableException;
+import com.xango.nextdeparture.domain.model.search.NextDepartureSearchQuery;
 
 import java.util.Collection;
 

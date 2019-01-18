@@ -1,5 +1,6 @@
-package com.xango.nextdeparture.domain.gateway;
+package com.xango.nextdeparture.app.gateway.inmemory;
 
+import com.xango.nextdeparture.domain.gateway.SearchNextDeparture;
 import com.xango.nextdeparture.domain.model.Disruption;
 import com.xango.nextdeparture.domain.model.NextDeparture;
 import com.xango.nextdeparture.domain.model.Station;
@@ -15,11 +16,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class InMemoryNextDepartureSearch implements NextDepartureSearch {
+class InMemorySearchNextDepartureAdapter implements SearchNextDeparture {
 
     private final Set<NextDeparture> nextDepartures;
 
-    public InMemoryNextDepartureSearch() {
+    InMemorySearchNextDepartureAdapter() {
         this.nextDepartures = new HashSet<>();
         loadData();
     }
@@ -92,6 +93,8 @@ public class InMemoryNextDepartureSearch implements NextDepartureSearch {
         nextDepartures.add(new NextDeparture(transilienL2, asnieres, "Voie1", LocalTime.now().plus(23, ChronoUnit.MINUTES)));
         nextDepartures.add(new NextDeparture(transilienL2, becon, "Voie2", LocalTime.now().plus(25, ChronoUnit.MINUTES)));
         nextDepartures.add(new NextDeparture(transilienL2, laGarenneColombes, "Voie1", LocalTime.now().plus(33, ChronoUnit.MINUTES)));
+
+
     }
 
     @Override

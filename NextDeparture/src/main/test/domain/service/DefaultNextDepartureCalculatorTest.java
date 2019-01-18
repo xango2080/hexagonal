@@ -1,12 +1,12 @@
-package domain.service;
+package com.xango.nextdeparture.domain.service;
 
-import domain.model.NextDeparture;
-import domain.model.exception.InvalidNextDepartureQueryException;
-import domain.model.request.NextDepartureCalculatorRequest;
-import domain.model.response.NextDepartureCalculatorResponse;
-import domain.model.search.NextDepartureSearchQuery;
-import domain.repository.ErrorNextDepatureSearch;
-import domain.repository.InMemoryNextDepartureSearch;
+import com.xango.nextdeparture.domain.model.NextDeparture;
+import com.xango.nextdeparture.domain.model.exception.InvalidNextDepartureQueryException;
+import com.xango.nextdeparture.domain.model.request.NextDepartureCalculatorRequest;
+import com.xango.nextdeparture.domain.model.response.NextDepartureCalculatorResponse;
+import com.xango.nextdeparture.domain.model.search.NextDepartureSearchQuery;
+import com.xango.nextdeparture.domain.gateway.ErrorNextDepatureSearch;
+import com.xango.nextdeparture.domain.gateway.InMemoryNextDepartureSearch;
 import org.junit.Test;
 
 import java.time.Instant;
